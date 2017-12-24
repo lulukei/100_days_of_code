@@ -33,11 +33,11 @@ function draw(){
   fill(101, 168, 196);
   rect(x-12.5, -bodyheight, 25, bodyheight-7.5);
 
-//neck
+  //neck
   stroke(140, 101, 211);
   line(x+2.5, -bodyheight, x+2.5, ny);
 
-//hair
+  //hair
   push();
   translate(x, ny);
   var angle = -PI/20;
@@ -49,7 +49,7 @@ function draw(){
   }
   pop();
 
-//head
+  //head
   noStroke();
   ellipse(x, ny, radius, radius);
   stroke(0);
