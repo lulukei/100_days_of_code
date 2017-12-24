@@ -4,6 +4,7 @@ var bodyheight = 37.5;
 var neckheight = 10;
 var radius = 15;
 var ny = - bodyheight - neckheight - radius;
+easing = 0.04;
 
 function setup(){
   createCanvas(180, 110);
@@ -12,7 +13,11 @@ function setup(){
 }
 
 function draw(){
-  background(29, 27, 90);
+
+  var targetX = mouseX;
+  x += (targetX - x) * easing;
+
+  background(29, 27, 90); //scalindg down by half when pressing the mouse
   translate(mouseX, y);
   if(mouseIsPressed){
     scale(0.5);
