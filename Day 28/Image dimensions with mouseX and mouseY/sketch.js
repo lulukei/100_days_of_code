@@ -4,7 +4,7 @@ function preload(){
   img = loadImage("preraphaelite1.jpg");
 }
 
-function setup(){
+function setup() {
   createCanvas(1200, 800);
 }
 
