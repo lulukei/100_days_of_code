@@ -1,3 +1,4 @@
+
 function setup() {
   createCanvas(480, 120);
   loadImage("lunar.jpg", drawImage);
