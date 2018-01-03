@@ -14,7 +14,6 @@ function draw() {
   rect(0, 0, 650, 800);
   fill(209, 163, 142);
   rect(650, 0, 650, 800);
-  stroke(0);
   text("Théorie", 320, 350);
   text("Correspon", 230, 450);
   fill(144, 193, 212);
