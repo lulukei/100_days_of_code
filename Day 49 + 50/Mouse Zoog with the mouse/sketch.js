@@ -12,6 +12,7 @@ function draw() {
   strokeWeight(20);
   line(x, y, x-75, y +100);
   line(x, y, x, y + 150);
+  
   line(x, y, x + 75, y + 100);
   strokeWeight(6);
   fill(255);
