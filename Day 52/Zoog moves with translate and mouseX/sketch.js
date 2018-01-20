@@ -20,7 +20,7 @@ function draw() {
   line(0, 0, 0, 150);
 
   //right leg
-  line(0, 0, +75, 100);
+  line(0, 075, 100);
 
   //outer eyeball
   strokeWeight(6);
