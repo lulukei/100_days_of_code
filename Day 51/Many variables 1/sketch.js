@@ -17,17 +17,17 @@ function setup() {
 function draw(){
   fill(120);
   ellipse(circleX, circleY, circleWidth, circleHeight);
-  circleX+=1;
-  circleY-=1;
+  circleX += 1;
+  circleY -= 1;
   ellipse(circleX2, circleY2, circleWidth, circleHeight);
-  circleX2+=1;
-  circleY2-=1;
+  circleX2 += 1;
+  circleY2 -= 1;
   ellipse(circleX3, circleY3, circleWidth, circleHeight);
-  circleX3+=1;
-  circleY3-=1;
+  circleX3 += 1;
+  circleY3 -= 1;
   ellipse(circleX4, circleY4, circleWidth, circleHeight);
-  circleX4+=1;
-  circleY4-=1;
-  circleWidth+=1;
-  circleHeight+=3;
+  circleX4 += 1;
+  circleY4 -= 1;
+  circleWidth += 1;
+  circleHeight += 3;
 }
