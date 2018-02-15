@@ -30,7 +30,8 @@ function draw() {
   ellipse(x, y, radius, radius);
 
   // Draw ball2
-  fill(r, g, b, 200); noStroke();
+  fill(r, g, b, 200);
+  noStroke();
   ellipse(x2, y2, radius2, radius2);
 
   //Set up ball1 gravity
