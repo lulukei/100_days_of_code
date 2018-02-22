@@ -22,28 +22,15 @@ function draw() {
   mySpaceShip3.startAgain();
   myZoog.display();
   myZoog.navigate();
-}
 
-// // Collision with big spaceship middle window
-//   distX = dist(px1, x);
-//   distY = dist(py1, y);
-//
-//   distance = sqrt(distX^2 + distY^2);
-//   if (distance <= radius) {
-//     background(238, 142, 17);
-//   } else {
-//     background(0, 0, 153);
-//   }
+  // Collision with big spaceship middle window
+    distX = dist(mySpaceShip.x, Zoog.x);
+    distY = dist(mySpaceShip.y, Zoog.y);
 
-function window (tempX, tempY) {
-  this.x = tempX;
-  this.y = tempY;
-  this.radius = tempRadius;
-
-  this.diplay = function {
-    ellipse(tempX, tempY, tempRadius, tempRadius);
-  }
-
+    distance = sqrt(distX^2 + distY^2);
+    if (distance > myZoog.radius) {
+      background(238, 142, 17);
+    }
 }
 
 function spaceShip(tempX, tempY, tempSize, tempAngle) {
@@ -67,9 +54,9 @@ function spaceShip(tempX, tempY, tempSize, tempAngle) {
     //windows
     stroke(40, 241, 255);
     strokeWeight(this.size/8.5);
-    point(this.x, this.y, this.size, this.size);
-    point(this.x+this.size*1/4, this.y, this.size, this.size);
-    point(this.x+this.size*1/2, this.y, this.size, this.size);
+    point(this.x, this.y);
+    point(this.x+this.size*1/4, this.y);
+    point(this.x+this.size*1/2, this.y);
     noStroke();
   }
 
@@ -91,10 +78,10 @@ function spaceShip(tempX, tempY, tempSize, tempAngle) {
    }
 }
 
-function Zoog(tempX, tempY, tempSize) {
+function Zoog(tempX, tempY, tempRadius) {
   this.x = tempX;
   this.y = tempY;
-  this.size = tempSize;
+  this.radius = tempRadius;
 
 //Showing Zoog
   this.display = function () {
@@ -110,15 +97,15 @@ function Zoog(tempX, tempY, tempSize) {
     //outer eyeball
     strokeWeight(6);
     fill(255);
-    ellipse(this.x, this.y, this.size, this.size/1.5);
+    ellipse(this.x, this.y, this.radius*, this.radius*2);
 
      //inner eyeball
      fill(40, 241, 255);
-     ellipse(this.x, this.y, this.size/1.8, this.size/1.8);
+     ellipse(this.x, this.y, this.radius/1.8*2, this.radius/1.8*2);
 
     //pupil
       fill(0);
-      ellipse(this.x, this.y, this.size/7.2, this.size/7.2);
+      ellipse(this.x, this.y, this.radius/7.2*2, this.radius/7.2);
       strokeWeight(20);
   }
 // Navigating Zoog
