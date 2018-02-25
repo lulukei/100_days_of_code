@@ -1,5 +1,3 @@
-var c;
-
 function setup() {
   createCanvas(700, 400);
   mySpaceShip = new spaceShip(width*0.13, height*0.25, 153, 100);
@@ -26,6 +24,7 @@ function draw() {
   myZoog.display();
   myZoog.navigate();
   myZoog.update();
+  numberOfLives();
 }
 
 function spaceShip(tempX, tempY, tempSize, tempAngle) {
@@ -147,12 +146,11 @@ function Zoog(tempX, tempY, tempRadius) {
     var distancew3s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
     var c = 3;
 
-    // var distance4 = dist(mouseX, mouseY, myZoog.x, myZoog.y);
-
     if (distancew1s1 < myZoog.radius || distancew1s2 < myZoog.radius || distancew1s3 < myZoog.radius
     || distancew2s1 < myZoog.radius || distancew2s2 < myZoog.radius || distancew2s3 < myZoog.radius
     || distancew3s1 < myZoog.radius || distancew3s2 < myZoog.radius || distancew3s3 < myZoog.radius) {
         reaction();
+        return true;
 
     } else {
       this.navigate();
@@ -175,13 +173,34 @@ function reaction () {
   myZoog.eyeColor = color(222, 33, 33);
 }
 
-// // Display number of lives
-// function numberOfLives() {
-//   var c = 3;
-//   fill(255);
-//   textSize(30);
-//   text("Number of lives left : " + c, 50, width*0.10);
-//   if (reaction() == true) {
-//     c = c-1;
-//   }
-// }
+// Display number of lives
+function numberOfLives() {
+
+  var distancew1s1 = dist(mySpaceShip.x, mySpaceShip.y, myZoog.x, myZoog.y);
+  var distancew1s2 = dist(mySpaceShip2.x, mySpaceShip.y, myZoog.x, myZoog.y);
+  var distancew1s3 = dist(mySpaceShip3.x, mySpaceShip.y, myZoog.x, myZoog.y);
+  var distancew2s1 = dist(mySpaceShip.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y)
+  var distancew2s2 = dist(mySpaceShip2.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y);
+  var distancew2s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y);;
+  var distancew3s1 = dist(mySpaceShip.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
+  var distancew3s2 = dist(mySpaceShip2.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
+  var distancew3s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
+  var c = 4;
+
+  fill(255);
+  textSize(30);
+  text("Number of lives left : " + c, 50, width*0.10);
+
+  if (distancew1s1 < myZoog.radius || distancew1s2 < myZoog.radius || distancew1s3 < myZoog.radius
+  || distancew2s1 < myZoog.radius || distancew2s2 < myZoog.radius || distancew2s3 < myZoog.radius
+  || distancew3s1 < myZoog.radius || distancew3s2 < myZoog.radius || distancew3s3 < myZoog.radius) {
+    c = c-1;
+  }
+
+  if (c < 1) {
+    background(0, 0, 153);
+    textSize(200);
+    fill(255);
+    text ("GAME OVER", width*0.33, height*0.5);
+  }
+}
