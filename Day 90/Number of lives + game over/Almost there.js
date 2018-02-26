@@ -132,24 +132,32 @@ function Zoog(tempX, tempY, tempRadius) {
     }
   }
 
+  this.touches = function(other) {
+
+    var distance = dist(other.x, other.y, this.x, this.y);
+    if (distance < this.radius);
+      return true;
+  } else {
+      return false;
+  }
+
 // Zoog changes colour if touches the windows of the spaceship
   this.update = function () {
 
-    var distancew1s1 = dist(mySpaceShip.x, mySpaceShip.y, myZoog.x, myZoog.y);
-    var distancew1s2 = dist(mySpaceShip2.x, mySpaceShip.y, myZoog.x, myZoog.y);
-    var distancew1s3 = dist(mySpaceShip3.x, mySpaceShip.y, myZoog.x, myZoog.y);
-    var distancew2s1 = dist(mySpaceShip.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y)
-    var distancew2s2 = dist(mySpaceShip2.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y);
-    var distancew2s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y);;
-    var distancew3s1 = dist(mySpaceShip.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
-    var distancew3s2 = dist(mySpaceShip2.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
-    var distancew3s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
+    // var distancew1s1 = dist(mySpaceShip.x, mySpaceShip.y, myZoog.x, myZoog.y);
+    // var distancew1s2 = dist(mySpaceShip2.x, mySpaceShip.y, myZoog.x, myZoog.y);
+    // var distancew1s3 = dist(mySpaceShip3.x, mySpaceShip.y, myZoog.x, myZoog.y);
+    // var distancew2s1 = dist(mySpaceShip.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y)
+    // var distancew2s2 = dist(mySpaceShip2.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y);
+    // var distancew2s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/4, mySpaceShip2.y, myZoog.x, myZoog.y);;
+    // var distancew3s1 = dist(mySpaceShip.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
+    // var distancew3s2 = dist(mySpaceShip2.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
+    // var distancew3s3 = dist(mySpaceShip3.x+mySpaceShip2.size*1/2, mySpaceShip3.y, myZoog.x, myZoog.y)
 
     if (distancew1s1 < myZoog.radius || distancew1s2 < myZoog.radius || distancew1s3 < myZoog.radius
     || distancew2s1 < myZoog.radius || distancew2s2 < myZoog.radius || distancew2s3 < myZoog.radius
     || distancew3s1 < myZoog.radius || distancew3s2 < myZoog.radius || distancew3s3 < myZoog.radius) {
         reaction();
-        return true;
 
     } else {
       this.navigate();
