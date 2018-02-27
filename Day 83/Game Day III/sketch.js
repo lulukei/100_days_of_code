@@ -47,7 +47,6 @@ function spaceShip(tempX, tempY, tempSize, tempAngle) {
     ellipse(this.x + this.size*1/4, this.y-this.size*0.07, this.size*0.4, this.size*0.38);
     fill(40, 241, 255);
     //windows
-    ellipse(this.x, this.y, this.size*0.11, size*0.11);
     ellipse(this.x, this.y, this.size*0.11, this.size*0.11);
     ellipse(this.x+this.size*1/4, this.y, this.size*0.11, this.size*0.11);
     ellipse(this.x+this.size*1/2, this.y, this.size*0.11, this.size*0.11);

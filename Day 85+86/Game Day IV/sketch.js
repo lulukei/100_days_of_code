@@ -97,7 +97,7 @@ function Zoog(tempX, tempY, tempRadius) {
     //outer eyeball
     strokeWeight(6);
     fill(255);
-    ellipse(this.x, this.y, this.radius*, this.radius*2);
+    ellipse(this.x, this.y, this.radius, this.radius*2);
 
      //inner eyeball
      fill(40, 241, 255);
